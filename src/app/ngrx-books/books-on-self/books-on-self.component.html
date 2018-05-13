@@ -1,0 +1,10 @@
+<div>
+  <h1>{{book.title}}</h1>
+  <h2>Category {{getCategoryName()}}</h2>
+  <button *ngIf="isNotToRead()" (click)="moveToToRead()">ToRead</button>
+  <button *ngIf="isNotReading()" (click)="moveToReading()">Reading</button>
+  <button *ngIf="isNotRead()" (click)="moveToRead()">Read</button>
+
+
+</div>
+
