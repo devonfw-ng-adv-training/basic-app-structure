@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<nav>
+  Show:
+  <a routerLink="/shelf"> All</a>
+  <a routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
+  <a routerLink="/shelf/{{collections.READING}}"> Reading</a>
+  <a routerLink="/shelf/{{collections.READ}}"> Read</a>
+
+</nav>
+<app-book-on-shelf-form (newBook)=newBookHandler($event)></app-book-on-shelf-form>
+
+<div class="collection_container">
+  <div  class="to_read header">
+    <h2>To Read</h2>
+  </div>
+  <div class="reading header">
+    <h2>Reading</h2>
+  </div>
+  <div class="read header">
+    <h2>Read</h2>
+  </div>
+ <app-books-on-shelf  *ngFor="let book of books | async" class="book" [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-shelf>
+</div>

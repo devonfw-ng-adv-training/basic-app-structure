@@ -1,0 +1,34 @@
+div {
+  //border-top: 1px dashed teal;
+  padding: 10px 0;
+}
+h1{
+  text-align: center;
+}
+
+fieldset {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+
+  button {
+    padding: 8px 5px;
+    color: white;
+    width: 95px;
+
+    &.todo {
+      background-color: dodgerblue;
+      border: 1px solid midnightblue;
+    }
+
+    &.in-progress {
+      background-color: darkorange;
+      border: 1px solid orangered;
+    }
+
+    &.done {
+      background-color: forestgreen;
+      border: 1px solid darkgreen;
+    }
+  }
+}

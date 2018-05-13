@@ -1,0 +1,29 @@
+.collection_container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #fff;
+  color: #444;
+  grid-auto-flow: column;
+}
+
+.header{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+  .book  {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .to_read{
+    grid-column: 1 ;
+  }
+  .reading {
+    grid-column: 2 ;
+  }
+  .read {
+    grid-column:  3;
+  }
+

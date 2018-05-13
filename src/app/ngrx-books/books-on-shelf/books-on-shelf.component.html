@@ -1,0 +1,10 @@
+<div>
+  <h1>{{book.title}}</h1>
+  <fieldset>
+    <legend>Move to:</legend>
+    <button *ngIf="isNotToRead()" (click)="moveToToRead()" class="todo">To read</button>
+    <button *ngIf="isNotReading()" (click)="moveToReading()" class="in-progress">Reading</button>
+    <button *ngIf="isNotRead()" (click)="moveToRead()" class="done">Read</button>
+  </fieldset>
+</div>
+

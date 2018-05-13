@@ -1,0 +1,11 @@
+<form>
+  <label for="title">Title</label>
+  <input id="title" #title/>
+  <label for="collection">Collection</label>
+  <select id="collection" #collection [value]="collection">
+    <option [value]="collections.TO_READ">To Read</option>
+    <option [value]="collections.READING">Reading</option>
+    <option [value]="collections.READ">Read</option>
+  </select>
+  <button (click)="saveBook(title, collection)" type="button">Add Book</button>
+</form>
