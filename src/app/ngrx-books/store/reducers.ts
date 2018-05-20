@@ -5,7 +5,7 @@ export interface BooksState {
   items: NgRxBook[];
 }
 
-const initialBooksState = {
+export const initialBooksState = {
   items: [
     new NgRxBook('Gra o Tron', Collections.TO_READ),
     new NgRxBook('Wiedźmin', Collections.READING),

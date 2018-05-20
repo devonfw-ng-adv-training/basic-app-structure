@@ -5,6 +5,8 @@ import { BookOnShelfFormComponent } from '../book-on-shelf-form/book-on-shelf-fo
 import { BooksOnShelfComponent } from '../books-on-shelf/books-on-shelf.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ShelfService } from '../services/shelf.service';
+import { StoreModule } from '@ngrx/store';
+import { reducersMap } from '../store';
 
 describe('BooksShelfComponent', () => {
   let component: BooksShelfComponent;
@@ -12,7 +14,7 @@ describe('BooksShelfComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
+      imports: [ RouterTestingModule, StoreModule.forRoot(reducersMap) ],
       declarations: [ BooksShelfComponent, BooksOnShelfComponent, BookOnShelfFormComponent ],
       providers: [ ShelfService ],
     })
