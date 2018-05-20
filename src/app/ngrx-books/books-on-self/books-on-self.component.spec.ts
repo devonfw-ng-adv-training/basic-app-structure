@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BooksOnSelfComponent } from './books-on-self.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Collections, NgRxBook } from '../model/models';
 
 describe('BooksOnSelfComponent', () => {
   let component: BooksOnSelfComponent;
@@ -8,7 +10,8 @@ describe('BooksOnSelfComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BooksOnSelfComponent ]
+      imports: [ RouterTestingModule ],
+      declarations: [ BooksOnSelfComponent ],
     })
     .compileComponents();
   }));
@@ -16,6 +19,7 @@ describe('BooksOnSelfComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BooksOnSelfComponent);
     component = fixture.componentInstance;
+    component.book = new NgRxBook('Le Petit Prince', Collections.TO_READ);
     fixture.detectChanges();
   });
 

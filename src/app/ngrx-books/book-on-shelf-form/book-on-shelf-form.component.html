@@ -1,4 +1,4 @@
-<div>
+<form>
   <label for="title">Title</label>
   <input id="title" #title/>
   <label for="collection">Collection</label>
@@ -7,7 +7,5 @@
     <option [value]="collections.READING">Reading</option>
     <option [value]="collections.READ">Read</option>
   </select>
-</div>
-<div>
   <button (click)="saveBook(title, collection)">Add Book</button>
-</div>
+</form>

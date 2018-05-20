@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <nav>
   Show:
-  <a  routerLink="/shelf"> All</a>
-  <a routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
-  <a routerLink="/shelf/{{collections.READING}}"> Reading</a>
-  <a routerLink="/shelf/{{collections.READ}}"> Read</a>
+  <a attr.routerLink="/shelf"> All</a>
+  <a attr.routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
+  <a attr.routerLink="/shelf/{{collections.READING}}"> Reading</a>
+  <a attr.routerLink="/shelf/{{collections.READ}}"> Read</a>
 
 </nav>
 <app-book-on-shelf-form (newBook)=newBookHandler($event)></app-book-on-shelf-form>
