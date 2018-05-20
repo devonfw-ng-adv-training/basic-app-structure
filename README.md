@@ -4,6 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrating ngrx
 
+### Step 3
+
+* Refactor `BooksShelfComponent` to use `| async`
+* Extract books selection logic to `store/selectors.ts`, use `createSelector` function,
+* Write a unit test for your reducer
+
 ### Step 2
 
 * Inject `Store<NgrxModuleState>` to component, get books with `select` operator
