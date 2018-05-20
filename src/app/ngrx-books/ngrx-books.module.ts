@@ -7,6 +7,8 @@ import {ShelfService} from './services/shelf.service';
 import {BookOnShelfFormComponent} from './book-on-shelf-form/book-on-shelf-form.component';
 import { reducersMap } from './store';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { BooksEffects } from './store/effects';
 
 @NgModule({
   imports: [
@@ -19,6 +21,7 @@ import { StoreModule } from '@ngrx/store';
       component: BooksShelfComponent,
     }]),
     StoreModule.forRoot(reducersMap),
+    EffectsModule.forRoot([BooksEffects]),
   ],
   declarations: [BooksShelfComponent, BooksOnShelfComponent, BookOnShelfFormComponent],
   providers: [ShelfService]
