@@ -4,6 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrating ngrx
 
+### Step 2
+
+* Inject `Store<NgrxModuleState>` to component, get books with `select` operator
+* Use the store to render books in `BooksShelf`:
+  * Select all book items,
+  * Assign them to existing `books: NgRxBook[]` (temporarily)
+  * Map book collection to a filtered one, based on `this.mode`
+
 ### Step 1
 
 * Install `@ngrx/store` package
