@@ -4,6 +4,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrating ngrx
 
+### Step 5
+
+* Remove unused methods from `ShelfService`
+* Add `ShelfService.fetchBooks` method that will return books with some delay, 
+  to emulate the HTTP request behaviour
+* Be sure that `ShelfService` returns other titles than in the default state
+* Install `@ngrx/effects` package
+* Add `LoadBooks` and `BooksLoaded` actions, handle them in the reducer
+* Write an effect that reloads books on `LoadBooks` action 
+  and emits `BooksLoaded` action  
+* Register the effect with `EffectsModule.forRoot`
+* Add a button that will dispatch `LoadBooks` action
+
 ### Step 4
 
 * Handle updating book in the reducer:

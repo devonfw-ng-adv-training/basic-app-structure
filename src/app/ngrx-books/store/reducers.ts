@@ -1,5 +1,6 @@
 import { Collections, NgRxBook } from '../model/models';
 import { Action } from '@ngrx/store';
+import { UPDATE_BOOK, UpdateBook } from './actions';
 
 export interface BooksState {
   items: NgRxBook[];
@@ -18,5 +19,17 @@ export const initialBooksState = {
 
 export function booksReducer(state: BooksState = initialBooksState, action: Action) {
   console.log('Books reducer called with:', state, action);
-  return state;
+  switch (action.type) {
+    case UPDATE_BOOK: {
+      const { payload } = action as UpdateBook;
+      const items = state.items.map(
+        book => payload.id === book.id ?
+          { ...book, ...payload} :
+          book
+      );
+      return { ...state, items };
+    }
+    default:
+      return state;
+  }
 }
