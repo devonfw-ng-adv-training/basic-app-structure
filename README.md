@@ -4,6 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrating ngrx
 
+### Step 4
+
+* Handle updating book in the reducer:
+  * Notice that there's no invariant property, so introduce `id`
+  * Assign unique id to a `NgrxBook`, use `uuid` package
+  * Handle an update action that carries an `id` 
+* Test the reducer
+* Dispatch the update action on book move (`BookShelfComponent`)
+
 ### Step 3
 
 * Refactor `BooksShelfComponent` to use `| async`

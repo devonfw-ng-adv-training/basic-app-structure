@@ -10,9 +10,7 @@
 <app-book-on-shelf-form (newBook)=newBookHandler($event)></app-book-on-shelf-form>
 
 <div class="collection_container">
-  <div *ngFor="let book of books">
-
-
+  <div *ngFor="let book of books | async">
     <div *ngIf="book.collection === collections.TO_READ" class="to_read">
       <app-books-on-shelf [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-shelf>
     </div>

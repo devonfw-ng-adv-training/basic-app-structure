@@ -5,6 +5,9 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import { NgrxModuleState } from '../store';
 import { Store, select } from '@ngrx/store';
 import { filter, map } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { selectBookItems } from '../store/selectors';
 
 @Component({
   selector: 'app-books-shelf',
@@ -12,7 +15,7 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./books-shelf.component.scss']
 })
 export class BooksShelfComponent implements OnInit {
-  books = [];
+  books: Observable<NgRxBook[]> = of([]);
   title: string;
   mode: Collections | undefined;
   collections = Collections;
@@ -33,17 +36,14 @@ export class BooksShelfComponent implements OnInit {
   }
 
   private getData() {
-    this.store$
+    this.books = this.store$
       .pipe(
-        select(state => state && state.books && state.books.items),
+        select(selectBookItems),
         map((bookItems: NgRxBook[]) => this.mode ?
           bookItems.filter(book => book.collection === this.mode) :
           bookItems
         )
-      )
-      .subscribe((bookItems: NgRxBook[]) => {
-        this.books = bookItems; // TODO Do it like a human being
-      });
+      );
 
     switch (this.mode) {
       case Collections.READ : {
