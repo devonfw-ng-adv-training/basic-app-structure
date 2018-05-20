@@ -1,39 +1,24 @@
 import {Injectable} from '@angular/core';
 import {Collections, NgRxBook} from '../model/models';
+import { map } from 'rxjs/operators';
+import { timer } from 'rxjs/observable/timer';
 
 @Injectable()
 export class ShelfService {
 
   books: NgRxBook[] = [];
 
-
   constructor() {
-    this.books.push(new NgRxBook('Gra o Tron', Collections.TO_READ));
-    this.books.push(new NgRxBook('Wiedźmin', Collections.READING));
-    this.books.push(new NgRxBook('Władca Pierscienia', Collections.READ));
-    this.books.push(new NgRxBook('JS The Good Parts', Collections.TO_READ));
-    this.books.push(new NgRxBook('Clean Code', Collections.READ));
-    this.books.push(new NgRxBook('You don\'t know JS', Collections.READING));
-
+    this.books.push(new NgRxBook('Game of Thrones', Collections.TO_READ));
+    this.books.push(new NgRxBook('The Witcher', Collections.READING));
+    this.books.push(new NgRxBook('Lord of the Rings', Collections.READ));
+    this.books.push(new NgRxBook('JS: The Good Parts, E2', Collections.TO_READ));
+    this.books.push(new NgRxBook('Clean Code, E2', Collections.READ));
+    this.books.push(new NgRxBook('You don\'t know JS, E2', Collections.READING));
   }
 
-  getBooks() {
-    return this.books;
-
-  }
-
-  getBooksToRead(): NgRxBook[] {
-    return this.books.filter(book => book.collection === Collections.TO_READ);
-  }
-
-  getBooksReading(): NgRxBook[] {
-    return this.books.filter(book => book.collection === Collections.READING);
-
-  }
-
-  getBookRead(): NgRxBook[] {
-    return this.books.filter(book => book.collection === Collections.READ);
-
+  fetchBooks() {
+    return timer(3000).pipe(map(() => this.books));
   }
 
   addBook(book: NgRxBook) {

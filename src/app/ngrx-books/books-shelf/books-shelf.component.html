@@ -5,8 +5,8 @@
   <a routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
   <a routerLink="/shelf/{{collections.READING}}"> Reading</a>
   <a routerLink="/shelf/{{collections.READ}}"> Read</a>
-
 </nav>
+<button (click)="loadBooks()">Reload books</button>
 <app-book-on-shelf-form (newBook)=newBookHandler($event)></app-book-on-shelf-form>
 
 <div class="collection_container">

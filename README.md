@@ -4,6 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Integrating ngrx
 
+### Step 6
+
+* Install `@ngrx/router-store` package
+* Register route reducer and serializer
+* Show some info when books are loading
+* Tweak existing effect so that it starts loading books both on `ROUTER_NAVIGATION`
+  and on `LOAD_BOOKS` actions
+
 ### Step 5
 
 * Remove unused methods from `ShelfService`
