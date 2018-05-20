@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <nav>
   Show:
-  <a attr.routerLink="/shelf"> All</a>
-  <a attr.routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
-  <a attr.routerLink="/shelf/{{collections.READING}}"> Reading</a>
-  <a attr.routerLink="/shelf/{{collections.READ}}"> Read</a>
+  <a routerLink="/shelf"> All</a>
+  <a routerLink="/shelf/{{collections.TO_READ}}"> To Read</a>
+  <a routerLink="/shelf/{{collections.READING}}"> Reading</a>
+  <a routerLink="/shelf/{{collections.READ}}"> Read</a>
 
 </nav>
 <app-book-on-shelf-form (newBook)=newBookHandler($event)></app-book-on-shelf-form>
@@ -14,13 +14,13 @@
 
 
     <div *ngIf="book.collection === collections.TO_READ" class="to_read">
-      <app-books-on-self [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-self>
+      <app-books-on-shelf [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-shelf>
     </div>
     <div *ngIf="book.collection === collections.READING" class="reading">
-      <app-books-on-self [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-self>
+      <app-books-on-shelf [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-shelf>
     </div>
     <div *ngIf="book.collection === collections.READ" class="read">
-      <app-books-on-self [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-self>
+      <app-books-on-shelf [book]="book" (collectionChange)="changeCollectionHandler($event)"></app-books-on-shelf>
     </div>
   </div>
 

@@ -1,23 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { BooksOnSelfComponent } from './books-on-self.component';
+import { BooksOnShelfComponent } from './books-on-shelf.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Collections, NgRxBook } from '../model/models';
 
-describe('BooksOnSelfComponent', () => {
-  let component: BooksOnSelfComponent;
-  let fixture: ComponentFixture<BooksOnSelfComponent>;
+describe('BooksOnShelfComponent', () => {
+  let component: BooksOnShelfComponent;
+  let fixture: ComponentFixture<BooksOnShelfComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule ],
-      declarations: [ BooksOnSelfComponent ],
+      declarations: [ BooksOnShelfComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BooksOnSelfComponent);
+    fixture = TestBed.createComponent(BooksOnShelfComponent);
     component = fixture.componentInstance;
     component.book = new NgRxBook('Le Petit Prince', Collections.TO_READ);
     fixture.detectChanges();

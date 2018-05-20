@@ -1,26 +1,17 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Collections, NgRxBook} from '../model/models';
 
 @Component({
-  selector: 'app-books-on-self',
-  templateUrl: './books-on-self.component.html',
-  styleUrls: ['./books-on-self.component.scss']
+  selector: 'app-books-on-shelf',
+  templateUrl: './books-on-shelf.component.html',
+  styleUrls: ['./books-on-shelf.component.scss']
 })
-export class BooksOnSelfComponent implements OnInit {
-
-
+export class BooksOnShelfComponent {
   @Input()
   book: NgRxBook;
 
   @Output()
   collectionChange = new EventEmitter<{ book: NgRxBook, newCollection: Collections }>();
-
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   isNotToRead() {
     return this.isNot(Collections.TO_READ);
@@ -43,7 +34,7 @@ export class BooksOnSelfComponent implements OnInit {
   }
 
   moveToToRead() {
-    this.moveTo(Collections.READ);
+    this.moveTo(Collections.TO_READ);
   }
 
   getCategoryName() {
@@ -68,6 +59,4 @@ export class BooksOnSelfComponent implements OnInit {
   private isNot(collection) {
     return this.book.collection !== collection;
   }
-
-
 }

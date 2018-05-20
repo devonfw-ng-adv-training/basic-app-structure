@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BooksShelfComponent } from './books-shelf.component';
 import { BookOnShelfFormComponent } from '../book-on-shelf-form/book-on-shelf-form.component';
-import { BooksOnSelfComponent } from '../books-on-self/books-on-self.component';
+import { BooksOnShelfComponent } from '../books-on-shelf/books-on-shelf.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ShelfService } from '../services/shelf.service';
 
@@ -13,7 +13,7 @@ describe('BooksShelfComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule ],
-      declarations: [ BooksShelfComponent, BooksOnSelfComponent, BookOnShelfFormComponent ],
+      declarations: [ BooksShelfComponent, BooksOnShelfComponent, BookOnShelfFormComponent ],
       providers: [ ShelfService ],
     })
     .compileComponents();
